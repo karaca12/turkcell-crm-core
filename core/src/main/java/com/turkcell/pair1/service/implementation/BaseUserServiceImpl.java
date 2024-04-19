@@ -3,7 +3,7 @@ package com.turkcell.pair1.service.implementation;
 import com.turkcell.pair1.entity.User;
 import com.turkcell.pair1.repository.UserRepository;
 import com.turkcell.pair1.service.abstraction.UserService;
-import com.turkcell.pair1.service.dto.RegisterRequest;
+import com.turkcell.pair1.service.dto.request.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class BaseUserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
