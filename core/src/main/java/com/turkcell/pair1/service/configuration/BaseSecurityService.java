@@ -1,4 +1,4 @@
-package com.turkcell.pair1.configuration;
+package com.turkcell.pair1.service.configuration;
 
 import com.turkcell.pair1.filter.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
@@ -11,12 +11,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class BaseSecurityService {
     private final JwtAuthFilter jwtAuthFilter;
+    private static final String[] WHITELIST_URLS = {
+            "/swagger-ui/**",
+            "/v2/api-docs",
+            "/v3/api-docs",
+            "/v3/api-docs/**",
+            "/api/v1/auth/**"
+    };
 
 
     public HttpSecurity configureCoreSecurity(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
 
                 .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(req-> req.requestMatchers(WHITELIST_URLS).permitAll())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity;
