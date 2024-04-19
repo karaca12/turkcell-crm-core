@@ -1,4 +1,4 @@
-package com.turkcell.pair1.service.configuration;
+package com.turkcell.pair1.configuration;
 
 
 import com.turkcell.pair1.service.abstraction.UserService;
