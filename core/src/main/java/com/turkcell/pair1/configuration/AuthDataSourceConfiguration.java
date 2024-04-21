@@ -20,7 +20,6 @@ import java.util.Map;
 import java.util.Objects;
 
 @Configuration
-@EnableTransactionManagement
 @EnableJpaRepositories(
         basePackages = "com.turkcell.pair1.repository",
         entityManagerFactoryRef = "authEntityManagerFactory",
