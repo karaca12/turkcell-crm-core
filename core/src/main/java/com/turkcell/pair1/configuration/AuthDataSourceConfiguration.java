@@ -22,7 +22,6 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = {Role.class, User.class},
         basePackages = "com.turkcell.pair1.repository",
         entityManagerFactoryRef = "authEntityManagerFactory",
         transactionManagerRef = "authTransactionManager"
