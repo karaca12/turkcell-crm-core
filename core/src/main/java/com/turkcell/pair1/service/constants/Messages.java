@@ -7,6 +7,7 @@ public class Messages {
         public static final String NO_CUSTOMER_FOUND = "noCustomerFound";
         public static final String NO_ADDRESS_FOUND = "noAddressFound";
         public static final String CUSTOMER_DOES_NOT_CONTAIN_ADDRESS = "customerDoesNotContainAddress";
+        public static final String NO_ORDER_FOUND = "noOrderFound";
     }
 
     public static class ValidationErrors{
