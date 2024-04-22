@@ -1,6 +1,5 @@
 package com.turkcell.pair1.annotation;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.lang.annotation.ElementType;
