@@ -11,6 +11,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @ComponentScan(basePackages = {"com.turkcell.pair1"})
-@EntityScan(basePackages = {"com.turkcell.pair1.entity"})
 public @interface EnableSecurity {
 }

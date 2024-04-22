@@ -1,3 +1,4 @@
+/*
 package com.turkcell.pair1.entity;
 
 import jakarta.persistence.*;
@@ -35,4 +36,4 @@ public abstract class BaseEntity {
     }
 
 
-}
+}*/
