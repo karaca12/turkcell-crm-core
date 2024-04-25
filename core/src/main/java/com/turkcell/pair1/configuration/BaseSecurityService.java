@@ -30,6 +30,4 @@ public class BaseSecurityService {
         return httpSecurity;
     }
 
-
-
 }
