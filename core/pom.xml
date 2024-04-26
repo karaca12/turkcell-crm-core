@@ -69,4 +69,12 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>Github Packages</name>
+      <url>https://maven.pkg.github.com/karaca12/turkcell-crm-core</url>
+    </repository>
+  </distributionManagement>
 </project>
