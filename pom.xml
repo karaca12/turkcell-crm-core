@@ -8,7 +8,7 @@
     <relativePath/>
   </parent>
   <groupId>com.turkcell.pair1</groupId>
-  <artifactId>core</artifactId>
+  <artifactId>turkcell-crm-core</artifactId>
   <packaging>jar</packaging>
   <version>1.4.0</version>
   <properties>
