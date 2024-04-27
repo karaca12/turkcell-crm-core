@@ -1,12 +1,10 @@
 package com.turkcell.pair1.configuration.exception;
 
-import com.turkcell.pair1.configuration.exception.details.BusinessProblemDetails;
-import com.turkcell.pair1.configuration.exception.details.FeignProblemDetails;
-import com.turkcell.pair1.configuration.exception.details.ProblemDetails;
-import com.turkcell.pair1.configuration.exception.details.ValidationProblemDetails;
+import com.turkcell.pair1.configuration.exception.details.*;
 import com.turkcell.pair1.configuration.exception.types.BusinessException;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -52,9 +50,16 @@ public class BaseGlobalExceptionHandler {
         return problemDetails;
     }
 
+    @ExceptionHandler({BadCredentialsException.class})
+    public BadCredentialsProblemDetails handleBadCredentialsException(BadCredentialsException exception) {
+        BadCredentialsProblemDetails problemDetails = new BadCredentialsProblemDetails();
+        problemDetails.setDetail(exception.getMessage());
+        return problemDetails;
+    }
+
     @ExceptionHandler({Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ProblemDetails handleException() {
-        return new ProblemDetails("Unknown Error","Some error occurred.","https://turkcell.com/exceptions/unknown");
+        return new ProblemDetails("Unknown Error", "Some error occurred.", "https://turkcell.com/exceptions/unknown");
     }
 }
