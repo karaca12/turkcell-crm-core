@@ -22,12 +22,9 @@ public class BaseSecurityService {
 
     public HttpSecurity configureCoreSecurity(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req-> req.requestMatchers(WHITELIST_URLS).permitAll())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-
         return httpSecurity;
     }
-
 }
