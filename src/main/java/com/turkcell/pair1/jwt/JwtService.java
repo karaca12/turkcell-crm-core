@@ -17,7 +17,9 @@ import java.util.Map;
 
 @Service
 public class JwtService {
-    private long EXPIRATION=6000000;
+    @Value("${jwt.expiration}")
+    private long EXPIRATION;
+
     @Value("${jwt.secret.key}")
     private String SECRET_KEY;
 
