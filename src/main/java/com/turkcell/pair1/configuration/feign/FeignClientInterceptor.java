@@ -6,8 +6,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 public class FeignClientInterceptor implements RequestInterceptor {
-    private static final String AUTHORIZATION_HEADER = "Authorization";
-
     @Override
     public void apply(RequestTemplate requestTemplate) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -15,7 +13,7 @@ public class FeignClientInterceptor implements RequestInterceptor {
             String jwtToken = attributes.getRequest().getHeader("Authorization");
             if (jwtToken != null && jwtToken.startsWith("Bearer ")) {
                 jwtToken = jwtToken.substring(7);
-                requestTemplate.header(AUTHORIZATION_HEADER, "Bearer " + jwtToken);
+                requestTemplate.header("Authorization", "Bearer " + jwtToken);
             }
         }
     }
