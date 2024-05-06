@@ -1,5 +1,6 @@
 package com.turkcell.pair1.jwt;
 
+import com.turkcell.pair1.constants.JwtConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -15,8 +16,8 @@ import java.util.Map;
 
 @Service
 public class JwtService {
-    private long EXPIRATION = 6000000;
-    private String SECRET_KEY = "3054b42d401b94c2e7129cf821ac34e6b03a09cd47bb24eae6552ac1096d9c014a58ece6b50d09529f8f896c4c842c0bbee7cd82b18d29ebb9e5aa06b1cd0d59";
+    private long EXPIRATION = JwtConstants.expiration;
+    private String SECRET_KEY = JwtConstants.secret_key;
 
     public String generateToken(String username, List<String> roles) {
         Map<String, Object> claims = new HashMap<>();
